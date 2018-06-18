@@ -1,0 +1,96 @@
+//
+// Select Menu
+// ------------------------------
+
+
+// wrapper around the menu
+
+.Select-menu-outer {
+	// Unfortunately, having both border-radius and allows scrolling using overflow defined on the same
+	// element forces the browser to repaint on scroll.  However, if these definitions are split into an
+	// outer and an inner element, the browser is able to optimize the scrolling behavior and does not
+	// have to repaint on scroll.
+	//
+	// This also
+
+	position: absolute;
+	top: 100%;
+	z-index: $select-menu-zindex;
+	margin-top: 4px;
+	padding: 6px 0;
+	width: 100%;
+	max-height: ($select-menu-max-height + 12px);
+	overflow-y: auto;
+	border-radius: $select-input-border-radius;
+	border: 1px solid $select-input-border-color;
+	background-color: $select-input-bg;
+	box-shadow: $standardBoxShadow;
+	-webkit-overflow-scrolling: touch;
+}
+
+
+// wrapper
+
+.Select-menu {
+}
+
+.Select-option-group {
+	.Select-option-group-label {
+		box-sizing: border-box;
+		display: block;
+		padding: ($select-option-padding-vertical * 1.5) $select-option-padding-horizontal;
+		line-height: 15px;
+		font-weight: $boldFontWeight;
+		background-color: $backgroundColor;
+		border-top: $standardBorder;
+		border-bottom: $standardBorder;
+	}
+
+	.Select-option {
+		padding-left: 10px;
+	}
+}
+
+
+// options
+
+.Select-option {
+	box-sizing: border-box;
+	background-color: $select-option-bg;
+	color: $select-option-color;
+	cursor: pointer;
+	display: block;
+	padding: $select-option-padding-vertical $select-option-padding-horizontal;
+	line-height: 1.5;
+	white-space: normal;
+
+	&:last-child {
+		@include border-bottom-radius($select-input-border-radius);
+	}
+
+	&.is-focused {
+		background-color: $select-option-focused-bg;
+		color: $select-option-focused-color;
+	}
+
+	&.is-selected {
+		background-color: $select-option-selected-bg;
+		color: $select-option-selected-color;
+	}
+
+	&.is-disabled {
+		color: $select-option-disabled-color;
+		cursor: default;
+	}
+}
+
+
+// no results
+
+.Select-noresults {
+	box-sizing: border-box;
+	color: $select-noresults-color;
+	cursor: default;
+	display: block;
+	padding: 5px $select-padding-horizontal;
+}

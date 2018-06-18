@@ -1,0 +1,42 @@
+.dashboard-tiles
+	display: flex
+	flex-flow: row wrap
+	justify-content: flex-start
+	margin: 0 -19px
+
+	.tile
+		flex: 0 0 100%
+		margin: 20px 0
+		padding: 0 20px
+		max-width: 100%
+		border-right: 1px solid $lineColor
+
+		&:last-child
+			border: none
+
+		&.half
+			flex-basis: 50%
+			max-width: 50%
+
+		&.quarter
+			flex-basis: 25%
+			max-width: 25%
+
+		@media(max-width: $tabletWidth)
+			&.half,
+				flex-basis: 100%
+				max-width: 100%
+
+			&.quarter
+				flex-basis: 50%
+				max-width: 50%
+
+				&:nth-child(even)
+					border-right: none
+
+		@media(max-width: $mobileWidth)
+			&.half,
+			&.quarter,
+				flex-basis: 100%
+				max-width: 100%
+				border-right: none

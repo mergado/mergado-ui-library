@@ -1,0 +1,32 @@
+.vertical-form
+	margin: 20px auto
+	max-width: 640px
+	width: 100%
+
+	&.wide
+		max-width: 960px
+
+.horizontal-form
+	@include flex(flex-start, flex-end, row, wrap)
+	margin: -5px
+	flex: 1
+
+	label
+		white-space: nowrap
+
+		&.checkbox,
+		&.radio,
+			padding: 0
+			line-height: $elementSize
+
+	.input-group
+		flex: 1 1
+		margin: 5px
+		max-width: 480px
+
+	@media (max-width: $mobileWidth)
+		flex-direction: column
+		align-items: stretch
+
+		.input-group
+			width: calc(100% - 10px)

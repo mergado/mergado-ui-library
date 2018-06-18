@@ -1,0 +1,345 @@
+$dgLineHeight: $elementSize - 20px
+
+
+.datagrid-wrapper
+	width: 100%
+	overflow-x: auto
+
+	.datagrid
+		margin: 0
+		width: auto
+
+		td,
+		th,
+			white-space: nowrap
+
+.long-table-wrapper
+	max-height: calc(100vh - 150px)
+	overflow-y: auto
+
+
+.datagrid
+	box-sizing: border-box
+	position: relative
+	min-width: 100%
+	margin: 0 0 20px 0
+	border-collapse: separate
+
+	thead,
+	tfoot,
+		td,
+		th,
+			color: $white
+			background: $darkGrey
+
+		a
+			color: inherit
+
+	// Rounded header.
+	thead:first-child > tr > th
+		&:first-child
+			border-radius: 4px 0 0
+		&:last-child
+			border-radius: 0 4px 0 0
+
+	// Rounded footer.
+	tfoot:last-child
+		z-index: 10
+
+		&:after
+			display: none
+
+		& > tr
+			& > td,
+			& > th,
+				&:first-child
+					border-radius: 0 0 0 4px
+				&:last-child
+					border-radius: 0 0 4px
+
+	&.fixed
+		table-layout: fixed
+
+
+	//
+	//	Rows
+	//
+
+	tbody > tr
+		background: $white
+
+		&:hover:not(.no-hover)
+			background: $hoverBackground
+
+		&.highlight,
+		&.highlight-negative,
+			td:first-child
+				position: relative
+
+				&:before
+					content: ''
+					top: 0px
+					left: 0px
+					position: absolute
+					width: 3px
+					height: 100%
+		td,
+		th,
+			&:first-child
+				border-left: $standardBorder
+		td,
+		th,
+			&:last-child
+				border-right: $standardBorder
+
+
+		&.highlight
+			td:first-child:before
+				background: $primaryColor
+
+		&.highlight-negative
+			td:first-child:before
+				background: $negativeColor
+
+		&.checked
+			background: $highlightColor
+			color: $primaryColorDark
+
+			&:hover
+				background: darken($highlightColor, 8%)
+
+			.icon:not(.disabled)
+				fill: $primaryColorDark
+
+			a
+				color: inherit
+
+			td,
+				border-bottom: 1px solid $primaryColor
+
+		&.turned-off
+			color: $mediumGrey
+
+			.icon:not(.disabled)
+				fill: $mediumGrey
+
+			a
+				color: inherit
+
+			&:hover .actions
+				.icon:not(.disabled)
+					fill: $darkGrey
+
+
+	//
+	//	Content
+	//
+
+	td,
+	th,
+		height: $elementSize
+		line-height: $dgLineHeight
+		padding: 10px
+
+		@for $i from 1 through 100
+			&.w#{$i}
+				width: $i * 1%
+
+		&.w-icon
+			width: 44px
+
+		&.top
+			vertical-align: top
+
+		&.bottom
+			vertical-align: bottom
+
+		&.highlight
+			background: $backgroundColor
+
+		&.toggle-arrow-wrapper
+			padding: 0
+
+			.up-arrow,
+			.down-arrow,
+				width: 100%
+				min-width: 44px
+				height: 44px
+
+		&.link-wrapper
+			padding: 0
+
+			a
+				display: block
+				padding: 5px 10px
+				line-height: inherit
+				text-decoration: none
+
+				.icon
+					fill: $primaryColor
+
+				&:hover .icon
+					fill: $primaryColorDark
+
+	tbody
+		td,
+		th,
+			border-bottom: $standardBorder
+
+		&.fade
+			background-color: $extraLightGrey
+
+
+	//
+	//	Content
+	//
+
+	.ellipsis
+		white-space: nowrap
+		text-overflow: ellipsis
+		overflow: hidden
+
+	a
+		text-decoration: none
+
+	th,
+	td,
+		&:first-child .checkbox
+			display: block
+			margin: 0 auto
+
+	textarea
+		width: 100%
+
+	.long-text
+		padding: 0
+		line-height: $dgLineHeight
+		text-align: justify
+
+		&.one-line
+			@include ellipsis(false)
+			max-height: $dgLineHeight
+
+	.eshop-logo,
+	.user-avatar,
+		max-width: 32px
+		max-height: 32px
+		margin: -4px 0
+
+		&.small
+			max-width: 16px
+			max-height: 16px
+
+
+	.flex-sb
+		padding-right: 10px
+
+
+	table
+		margin-left: -10px
+		margin-right: -10px
+		width: calc(100% + 20px)
+
+		thead th
+			background: $white
+			color: $textColor
+			border-bottom: $standardBorder
+
+			&:first-child
+				border-left: $standardBorder
+
+			&:last-child
+				border-right: $standardBorder
+
+		&:first-child
+			margin-top: -10px
+
+		&:last-child
+			margin-bottom: -10px
+
+.datagrid-note
+	margin-top: 10px
+
+
+// Batch actions logic,
+// visibility: hidden/visible, because default icon display is undefined.
+.datagrid
+	thead .actions:not(.always-show) .icon
+		visibility: hidden
+
+		&:hover
+			background: $primaryColorDark
+
+			.icon
+				fill: $white
+
+	.actions
+		text-align: right
+		white-space: nowrap
+
+	tbody tr
+		.actions .icon:not(.disabled)
+			opacity: 0.95
+
+		&:hover .actions .icon:not(.disabled)
+			opacity: 1
+
+	&.batch-actions-active
+		.datagrid-sort
+			pointer-events: none
+
+			i
+				display: none
+
+		thead
+			th,
+			td,
+				background-color: $primaryColor
+
+			.actions .icon
+				visibility: visible
+
+			.batch-action-action
+				margin: -17px 0
+				padding: 13px 6px
+				width: 30px // 20px icon size, 10 px right margin on normal icons
+				height: $elementSize
+
+				&:last-child
+					margin-right: -5px
+
+		tbody .actions a.icon
+			visibility: hidden
+
+			&.batch-action-warn
+				visibility: visible
+
+				.icon
+					fill: $negativeColor
+
+
+// Sortable logic
+.datagrid
+	.sort-handle
+		user-select: none
+
+	.ui-sortable-helper
+		display: flex
+		height: $elementSize
+		justify-content: space-between
+		align-items: center
+		box-shadow: $standardBoxShadow
+		border: $standardBorder
+
+		td
+			padding: 0 10px
+			margin: 0
+			line-height: $elementSize
+
+		.link-wrapper a
+			margin: -10px
+			padding: 10px
+
+		.actions .icon,
+		.checkbox
+			visibility: hidden

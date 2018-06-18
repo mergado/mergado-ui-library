@@ -1,0 +1,50 @@
+.datagrid-sort
+	display: block
+	margin: -10px
+	padding: 10px
+	line-height: $dgLineHeight
+	white-space: nowrap
+
+	.sort-icon
+		position: relative
+		display: inline-block
+		margin: -5px 5px
+		width: 12px
+		height: 20px
+
+		&:after,
+		&:before,
+			content: ''
+			position: absolute
+			left: 0
+			width: 0
+			height: 0
+			border: solid transparent
+			border-width: 8px 6px
+
+		&:before
+			border-bottom-color: $grey
+			top: -8px
+
+		&:after
+			border-top-color: $grey
+			bottom: -8px
+
+		&.current-asc:before
+			border-bottom-color: $white
+
+		&.current-desc:after
+			border-top-color: $white
+
+	&:hover .sort-icon
+		&.target-asc:before
+			border-bottom-color: $white
+
+		&.target-asc:after
+			border-top-color: $grey
+
+		&.target-desc:after
+			border-top-color: $white
+
+		&.target-desc:before
+			border-bottom-color: $grey

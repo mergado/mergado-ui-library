@@ -1,0 +1,64 @@
+.paginator
+	margin: 20px 0
+	display: flex
+	justify-content: space-between
+
+	.button
+		min-width: 140px
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		.button-text
+			flex: 1
+			padding: 0 10px
+
+		.icon
+			fill: $white
+
+	.pages
+		display: flex
+		flex-wrap: wrap
+		font-weight: $boldFontWeight
+
+		a,
+		span,
+			margin: 0 2px
+			padding: 10px
+			min-width: $elementSize
+			line-height: $elementLineHeight
+			border: 1px solid transparent
+			border-radius: 4px
+			text-align: center
+			text-decoration: none
+			color: $primaryColor
+
+		.current
+			border-color: $lineColor
+			background-color: $white
+
+		a:hover
+			border-color: $primaryColorDark
+			background-color: $primaryColorDark
+			color: $white
+
+	.pages-info
+		display: none
+
+	@media (max-width: $tabletWidth)
+		.button
+			min-width: initial
+
+			.icon
+				margin: 0
+
+			.button-text
+				display: none
+
+		.pages
+			display: none
+
+		.pages-info
+			display: block
+			text-align: center
+			line-height: $elementSize

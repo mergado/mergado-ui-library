@@ -1,0 +1,43 @@
+.wizard-progress
+	display: flex
+	justify-content: flex-start
+	margin: 0 0 20px 0
+	padding: 0
+	list-style: none
+	border-bottom: 2px solid $lineColor
+
+	li
+		margin: 0 0 -2px 0
+		padding: 12px 20px
+		height: $elementSize + 4px  // border
+		line-height: $elementSize -24px
+		border-bottom: 4px solid transparent
+		text-decoration: none
+		font-size: 1.1rem
+		color: $grey
+		@include ellipsis()
+
+		.icon
+			margin-left: -10px
+			margin-right: 5px
+
+		.circle-number
+			@include icon-size($iconImageSize)
+			line-height: $iconImageSize
+			border-radius: 50%
+			text-align: center
+			font-style: normal
+			font-size: $iconImageSize / 1.5
+			background: $grey
+			color: $pageBackgroundColor
+
+		&.current
+			border-bottom-color: $primaryColor
+			font-weight: $boldFontWeight
+			color: $darkGrey
+
+			.circle-number
+				background: $primaryColor
+
+	@media (max-width: $tabletWidth)
+		flex-direction: column

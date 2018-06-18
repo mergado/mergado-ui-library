@@ -1,0 +1,60 @@
+.vertical-table
+	margin: 20px 0
+	width: 100%
+
+	&:first-child
+		margin-top: 0
+
+	&:last-child
+		margin-bottom: 0
+
+	&.with-header
+		thead
+			background: $backgroundColor
+			border-bottom: $standardBorder
+
+		td,
+		th,
+			padding: 3px 10px
+
+	td,
+	th,
+		padding: 3px 0
+		height: $elementSize + 6px
+
+	th
+		width: 30%
+
+		&.half
+			width: 20%
+
+		&.third
+			width: 10%
+
+	td
+		&.actions
+			padding-top: 10px
+
+		&.operation
+			width: $elementSize
+			text-align: center
+
+		&.hint-area
+			width: 20px !important
+
+	input.text,
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="text"],
+	textarea,
+	select,
+		width: 100%
+
+	&.inverse-bold
+		td
+			font-weight: $boldFontWeight
+
+		th
+			font-weight: $normalFontWeight

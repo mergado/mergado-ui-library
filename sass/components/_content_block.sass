@@ -1,0 +1,40 @@
+.content-block
+	margin: 40px 0
+
+	&:first-child
+		margin-top: 0
+
+	&:last-child
+		margin-bottom: 0
+
+
+.content-block-header,
+.content-block > header,
+	margin: 40px 0
+
+	&:first-child
+		margin-top: 0
+
+	&:last-child
+		margin-bottom: 0
+
+	h2,
+	h3,
+		line-height: $elementSize
+
+	&.with-subtitle
+		border-bottom: 2px solid $lineColor
+		padding-bottom: 8px
+
+		h2,
+		h3,
+			line-height: $elementSize - 10px
+			padding: 5px 0
+
+		.header-subtitle
+			margin: 0
+			font-size: 1rem
+			color: $grey
+
+	& + .scroll-highlight-wrapper
+		margin-top: 20px

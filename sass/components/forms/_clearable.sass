@@ -1,0 +1,28 @@
+.clearable-wrapper
+	position: relative
+
+	&.show-clear .clearable-clear
+		opacity: 1
+
+	input
+		position: relative
+		z-index: 10
+		padding-right: 30px !important
+
+	.clearable-clear
+		position: absolute
+		top: 50%
+		right: 5px
+		z-index: 20
+		margin: -10px 0
+		width: 20px
+		height: 20px
+		line-height: 20px
+		text-align: center
+		text-decoration: none
+		font-size: 20px
+		color: #999
+		opacity: 0
+
+		&:hover
+			color: $primaryColor

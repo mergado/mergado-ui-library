@@ -1,0 +1,166 @@
+html,
+body,
+	text-align: left
+	font-size: 14px
+	font-family: $baseFontFamily
+	font-weight: $normalFontWeight
+	background: $pageBackgroundColor
+	color: $textColor
+
+a
+	&,
+	&:visited,
+	&:active,
+		text-decoration: none
+		color: $primaryColor
+		cursor: pointer
+
+	&:hover,
+	&:focus,
+		color: $primaryColorDark
+		text-decoration: underline
+		outline: none
+
+h1,
+h2,
+h3,
+	font-weight: $normalFontWeight
+
+b,
+strong,
+th,
+h4,
+h5,
+h6,
+	font-weight: $boldFontWeight
+
+h1
+	font-size: 2rem
+
+h2
+	font-size: 1.7rem
+
+h3
+	font-size: 1.4rem
+
+h4
+	font-size: 1.2rem
+
+h5
+	font-size: 1.1rem
+
+h6
+	font-size: 1rem
+
+h2,
+h3,
+	margin: 40px 0 20px 0
+
+h4,
+h5,
+	margin: 20px 0 10px 0
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+	&:first-child:not(.keep-margin)
+		margin-top: 0px
+
+header
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+		margin: 0
+
+	&.with-icon
+		margin: 40px 0 20px 0
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		&:first-child
+			margin-top: 0
+
+		.popup.hint
+			margin: 0 !important
+
+
+@media (max-width: $tabletWidth)
+	h1
+		font-size: 1.6rem
+
+	h2
+		font-size: 1.5rem
+
+	h3
+		font-size: 1.3rem
+
+	h4
+		font-size: 1.2rem
+
+	h5
+		font-size: 1.1rem
+
+	h6
+		font-size: 1rem
+
+.text-block,
+	margin: 20px 0 40px 0
+
+	&:last-child
+		margin-bottom: 0
+
+.text-block,
+.text-content,
+	p
+		margin: 10px 0 20px 0
+		font-size: 1.1rem
+		text-align: justify
+
+		&.left
+			text-align: left
+
+		&.center
+			text-align: center
+
+		&.right
+			text-align: right
+
+	ul,
+	ol,
+	blockquote,
+		margin: 20px 0
+
+	p,
+	li,
+		line-height: 150%
+
+	blockquote
+		background: $lineColor
+		padding: 10px
+
+		& > *:last-child
+			margin-bottom: 0 !important
+
+	img
+		max-width: 100%
+
+	.video-container
+		position: relative
+		width: 100%
+		height: 0
+		margin-top: 20px
+		padding-bottom: 56.25%
+
+	.video
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%

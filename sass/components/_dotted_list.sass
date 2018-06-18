@@ -1,0 +1,40 @@
+.dotted-list
+	margin: 20px 0
+	padding: 0
+	list-style: none
+
+	li,
+	.row,
+		@include flex(space-between, stretch)
+		padding: 5px 0
+		min-height: 28px // 18px icons + padding
+		background-image: linear-gradient(to right, $mediumGrey 20%, rgba($white, 0) 0%)
+		background-position: 0% 70%
+		background-size: 5px 1px
+		background-repeat: repeat-x
+
+	.side
+		background: $white
+
+		&:first-child
+			@include flex(flex-start, center)
+			margin-right: 5px
+			padding-right: 5px
+
+		&:last-child
+			@include flex(flex-end, center)
+			margin-left: 5px
+			padding-left: 5px
+
+			.popup.hint
+				top: 0
+
+				&:not(:only-child)
+					margin-left: 10px
+
+	@media (max-width: $mobileWidth)
+		li,
+		.row
+			@include flex(flex-start, stretch, column)
+			padding: 10px 0
+			background: none

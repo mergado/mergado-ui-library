@@ -1,0 +1,109 @@
+.input-group
+	margin: 20px 0 10px 0
+
+	&.invalid
+		label,
+		.input-note,
+			color: $negativeColor
+
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="search"],
+		input[type="text"],
+		textarea,
+		select,
+			color: $negativeColor
+			border-color: $negativeColor
+
+			&.hover,
+			&:hover,
+			&:focus,
+				border-color: $negativeColor
+				box-shadow: inset 0px 0px 0px 1px $negativeColor
+
+	&.valid
+		label,
+		.input-note,
+			color: $positiveColor
+
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="search"],
+		input[type="text"],
+		textarea,
+		select,
+			color: $positiveColor
+			border-color: $positiveColor
+
+			&.hover,
+			&:hover,
+			&:focus,
+				border-color: $positiveColor
+				box-shadow: inset 0px 0px 0px 1px $positiveColor
+
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="text"],
+	textarea,
+	select,
+		display: block
+		width: 100%
+
+	label
+		padding: 5px 0
+		line-height: 20px
+
+	.input-note
+		margin-top: 5px
+		color: $grey
+
+.input-list
+	display: flex
+	justify-content: flex-start
+	flex-wrap: wrap
+
+	&.vertical
+		flex-direction: column
+		align-items: flex-start
+
+	label
+		width: auto
+		padding: 10px 20px 10px 0
+		line-height: 24px
+
+.submit-area
+	display: flex
+	flex-direction: column
+	align-items: center
+	margin: 40px 0 10px 0
+
+	& > button,
+	& > .button,
+	& > input[type="button"],
+	& > input[type="submit"],
+	& > .buttons-row,
+		margin-bottom: 10px
+
+		&:last-child
+			margin-bottom: 0
+
+.compound-selects
+	display: flex
+
+	.separator
+		width: $elementSize
+		line-height: $elementSize
+		text-align: center
+
+	&.two-selects > div
+		width: calc((100% - #{$elementSize}) / 2)
+
+	&.three-selects > div
+		width: calc((100% - (2 * #{$elementSize})) / 3)
+
+	&.four-selects > div
+		width: calc((100% - (3 * #{$elementSize})) / 4)

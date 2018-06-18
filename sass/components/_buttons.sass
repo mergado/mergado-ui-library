@@ -1,0 +1,219 @@
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+	&,
+	&:visited,
+		display: inline-block
+		padding: 10px 20px
+		min-width: 100px
+		line-height: $elementLineHeight
+		border: 1px solid $primaryColorDark
+		border-radius: 4px
+		outline: none
+		text-align: center
+		text-decoration: none
+		font-size: 1.1rem
+		color: $white
+		background-color: $primaryColor
+
+		.icon
+			fill: $white
+
+		&:last-child
+			margin-right: 0
+
+		&.small
+			line-height: $elementLineHeight - 8px
+			font-size: 1rem
+
+		&.big
+			line-height: $elementLineHeight + 8px
+
+		&:hover,
+		&:focus,
+		&.active,
+			text-decoration: none
+			color: $white
+			background-color: $primaryColorDark
+
+		&.danger
+			background-color: $dangerColor
+			border-color: $dangerColorDark
+
+			&:hover,
+			&:focus,
+			&.active,
+				background-color: $dangerColorDark
+
+		&.disabled,
+		&[disabled],
+			border-color: $lineColor
+			background-color: $lineColor
+
+			.icon
+				fill: $white
+
+			&:not(.keep-clickable)
+				pointer-events: none
+
+
+		&.green
+			background-color: $mergadoGreen
+			border-color: $mergadoGreenDark
+
+			&.active,
+			&:hover,
+			&:hover,
+			&.active,
+				background-color: $mergadoGreenDark
+
+			&.disabled,
+			&[disabled],
+				border-color: $lineColor
+				background-color: $lineColor
+
+		&.white
+			background-color: $white
+			border-color: $lineColor
+			color: $textColor
+
+			.icon
+				fill: $textColor
+
+			&:hover,
+			&:hover,
+			&.active,
+				color: $primaryColorDark
+
+				.icon
+					fill: $primaryColorDark
+
+			&.disabled,
+			&[disabled],
+				border-color: $lineColor
+				background-color: transparent
+				color: $lineColor
+
+				.icon
+					fill: $lineColor
+
+		&.secondary
+			background-color: transparent
+			color: $primaryColor
+
+			.icon
+				fill: $primaryColor
+
+			&.active,
+			&:hover,
+			&:focus,
+			&.active,
+				color: $white
+				background-color: $primaryColorDark
+
+				.icon
+					fill: $white
+
+			&.danger
+				color: $dangerColor
+
+				.icon
+					fill: $dangerColor
+
+				&.active,
+				&:hover,
+				&:focus,
+				&.active,
+					color: $white
+					background-color: $dangerColorDark
+
+					.icon
+						fill: $white
+
+			&.disabled,
+			&[disabled],
+				border-color: $lineColor
+				color: $lineColor
+
+				.icon
+					fill: $lineColor
+
+		&.text
+			color: $primaryColor
+			border-color: transparent
+			background-color: transparent
+
+			.icon
+				fill: $primaryColor
+
+			&.active,
+			&:hover,
+			&:focus,
+			&.active,
+				color: $primaryColorDark
+
+				.icon
+					fill: $primaryColorDark
+
+			&.danger
+				color: $dangerColor
+
+				.icon
+					fill: $dangerColor
+
+				&:hover,
+				&:focus,
+				&.active,
+					background-color: transparent
+					color: $dangerColorDark
+
+					.icon
+						fill: $dangerColorDark
+
+			&.disabled,
+			&[disabled],
+				color: $lineColor
+				pointer-events: none
+
+				.icon
+					fill: $lineColor
+
+
+.buttons-row
+	margin: -4px
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+
+	&.center
+		justify-content: center
+
+	&.right
+		justify-content: flex-end
+
+	&.split
+		justify-content: space-between
+
+	&.even
+		justify-content: space-around
+
+	button,
+	.button,
+	.button-wrapper,
+	input[type="button"],
+	input[type="submit"],
+		display: block
+		margin: 4px
+
+	.separator
+		display: block
+		margin: 4px
+		height: $elementLineHeight
+		border-left: $standardBorder
+
+.grouped-buttons
+	display: flex
+
+	.button
+		flex: 1

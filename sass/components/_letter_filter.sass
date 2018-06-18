@@ -1,0 +1,27 @@
+.letter-filter
+	display: flex
+	justify-content: flex-start
+	flex-wrap: wrap
+	margin: 20px 0
+	font-weight: $boldFontWeight
+
+	a,
+	span,
+		margin: 0 2px
+		padding: 10px
+		min-width: $elementSize
+		line-height: $elementLineHeight
+		border: 1px solid transparent
+		border-radius: 4px
+		text-align: center
+		text-decoration: none
+		color: $primaryColor
+
+	.current
+		border-color: $lineColor
+		background-color: $white
+
+	a:hover
+		border-color: $primaryColorDark
+		background-color: $primaryColorDark
+		color: $white

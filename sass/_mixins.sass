@@ -1,0 +1,35 @@
+@mixin flex($justifyContent: flex-start, $alignItems: stretch, $direction: row, $wrap: nowrap)
+	display: flex
+	justify-content: $justifyContent
+	align-items: $alignItems
+	flex-flow: $direction $wrap
+
+@mixin flexCenter()
+	@include flex(center, center)
+
+@mixin clearfix()
+	&:after
+		content: ''
+		display: block
+		clear: both
+
+@mixin ellipsis($no-wrap: true)
+	@if $no-wrap
+		white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+
+@mixin resetList()
+	margin: 0
+	padding: 0
+	list-style: none
+
+@mixin strike-through
+	&::after
+		display: block
+		width: 10px
+		height: 10px
+		content: ''
+		background: linear-gradient(to top left, transparent 0%, transparent calc(50% - 0.8px), $drabColor 50%, transparent calc(50% + 0.8px), transparent 100%)
+		position: relative
+		top: 1px

@@ -1,0 +1,56 @@
+.grid-controls
+	@include flex(space-between, flex-end, row, wrap)
+	margin: -5px -10px
+
+	.controls-block,
+		margin: 10px
+
+	.controls-group,
+		margin: 5px
+
+		&.buttons-row,
+		&.horizontal-form,
+			margin: 0
+
+	.controls-block,
+		display: flex
+		align-items: flex-end
+		flex-wrap: wrap
+		margin: 10px 5px
+
+		&:first-child
+			&,
+			.controls-group
+				justify-content: flex-start
+
+		&:last-child
+			&,
+			.controls-group
+				justify-content: flex-end
+
+	.controls-group:only-child
+		flex: 1
+
+	@media (max-width: $tabletWidth)
+		flex-direction: column-reverse
+
+		.controls-block
+			width: calc(100% - 10px)
+
+			&.push-back
+				order: -1
+
+		.grid-results-count
+			display: none
+
+	@media (max-width: $mobileWidth)
+		.buttons-row
+			flex-direction: column-reverse
+			align-items: stretch
+			width: 100%
+
+
+.grid-results-count
+	line-height: $elementSize
+	white-space: nowrap
+	text-align: right

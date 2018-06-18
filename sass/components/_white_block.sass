@@ -1,0 +1,63 @@
+.white-block
+	margin: 20px 0
+	padding: 19px // 1px is border, match possible 20px offset outside
+	border: $standardBorder
+	background: $white
+	border-radius: 4px
+
+	> header:first-child
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+		margin: -19px -19px 20px -19px
+		padding: 19px
+		min-height: 36px
+		border-bottom: $standardBorder
+		background: $backgroundColor
+		border-radius: 4px 4px 0 0
+
+		h1,
+		h2,
+		h3,
+			line-height: $elementSize - 10px
+			text-overflow: ellipsis
+			overflow: hidden
+
+			small
+				font-size: 1rem
+				line-height: 1rem
+				color: $grey
+
+				&:first-child
+					margin-bottom: 5px
+
+				&:last-child
+					margin-top: 5px
+
+		small
+			display: block
+			font: inherit
+
+		.header-icons
+			white-space: nowrap
+
+		.header-right
+			display: flex
+			align-items: center
+
+			.popup.hint
+				margin: 0 0 -5px 10px
+
+	> *:first-child
+		margin-top: 0
+
+	> *:last-child
+		margin-bottom: 0
+
+	@media (max-width: $mobileWidth)
+		padding: 14px 9px // 1px is border, match possible 20px offset outside
+
+		> header:first-child
+			margin: -9px -9px 15px -9px
+			padding: 9px 14px

@@ -1,0 +1,33 @@
+.tabs-navigation
+	margin-bottom: 20px
+
+	ul
+		@include flex(flex-start, flex-end)
+
+	li
+		padding: 0
+		border-bottom: 2px solid $lineColor
+
+		&:last-child
+			flex: 1
+
+	a
+		display: inline-block
+		margin: 0 0 -2px 0
+		padding: 0 20px 2px 20px
+		height: $elementSize + 4px // border
+		line-height: $elementSize
+		border-bottom: 2px solid $lineColor
+		text-decoration: none
+		font-size: 1.1rem
+		white-space: nowrap
+		color: $grey
+
+		&.active
+			padding-bottom: 0
+			border-bottom: 4px solid $primaryColor
+			font-weight: $boldFontWeight
+			color: $darkGrey
+
+		&:hover
+			color: $primaryColor

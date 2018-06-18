@@ -1,0 +1,113 @@
+$smallIconImageSize: 10px
+$iconImageSize: 18px
+$bigIconImageSize: 24px
+$largeIconImageSize: 36px
+
+
+@keyframes spin
+	0%
+		transform: rotate(0deg)
+
+	100%
+		transform: rotate(360deg)
+
+
+@mixin icon-size($size)
+	width: $size
+	height: $size
+
+
+// This fixes some random trouble in javascript.
+// For example, when SVG element is set as event
+// target, instead of it's <a> parent element.
+svg.icon,
+.icon svg,
+	pointer-events: none
+
+
+.icon
+	display: inline-block
+	@include icon-size($iconImageSize)
+	vertical-align: middle
+	fill: $darkGrey
+
+	.icon
+		display: block
+
+	&.small,
+		&,
+		& .icon,
+			@include icon-size($smallIconImageSize)
+
+	&.big,
+		&,
+		& .icon,
+			@include icon-size($bigIconImageSize)
+
+	&.large,
+		&,
+		& .icon,
+			@include icon-size($largeIconImageSize)
+
+	&.disabled
+		opacity: 0.20
+		cursor: default
+
+	thead th &
+		fill: $white
+
+// Link icons - hover effects.
+a.icon
+	&:not(.disabled):hover svg,
+	&:not(.disabled):focus svg,
+	&:not(.disabled).active svg,
+	&:not(.disabled).highlight svg,
+		fill: $primaryColor
+
+	&.positive:not(.disabled):hover svg,
+	&.positive:not(.disabled):focus svg,
+	&.positive:not(.disabled).active svg,
+		fill: $positiveColor
+
+	&.negative:not(.disabled):hover svg,
+	&.negative:not(.disabled):focus svg,
+	&.negative:not(.disabled).active svg,
+		fill: $negativeColor
+
+
+.status-dot
+	display: inline-block
+	width: 10px
+	height: 10px
+	border-radius: 100%
+
+	&.ok
+		background-color: $positiveColor
+
+	&.warning
+		background-color: $warningColor
+
+	&.failed
+		background-color: $negativeColor
+
+
+.icon,
+.status-dot,
+	margin: 0 10px
+
+	&.small
+		margin: 0 5px
+
+	&:first-child
+		margin-left: 0
+
+	&:last-child
+		margin-right: 0
+
+.icon + .icon
+	margin-left: 0
+
+
+.icon-loading
+	opacity: 0.5
+	animation: spin 0.75s linear infinite

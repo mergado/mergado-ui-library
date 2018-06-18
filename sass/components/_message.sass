@@ -1,0 +1,27 @@
+@mixin messageColor($color, $background)
+	border-color: $color
+	background-color: $background
+	color: $color
+
+	.icon
+		fill: $color
+
+.message
+	margin: 20px 0
+	padding: 10px
+	border: $standardBorder
+	border-radius: 4px
+	text-align: center
+	background: $yellow
+
+	p
+		padding: 5px 0
+
+	&.success
+		@include messageColor($positiveColor, $positiveBackground)
+
+	&.error
+		@include messageColor($negativeColor, $negativeBackground)
+
+	&.root
+		@include messageColor($rootColor, $rootBackgroundColor)

@@ -1,0 +1,44 @@
+{
+  "name": "Mergado-UI-Library",
+  "version": "1.0.0",
+  "description": "UI Library for Mergado apps developers",
+  "keywords": [],
+  "author": "Mergado Developers",
+  "license": "MIT",
+  "scripts": {
+    "watch": "webpack -w",
+    "build:prod": "webpack --config=webpack.config.production.js -w",
+    "build": "webpack --config=webpack.config.production.js",
+    "build:dev": "webpack"
+  },
+  "babel": {
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-class-properties"
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions"
+            ]
+          }
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.0.0"
+  }
+}

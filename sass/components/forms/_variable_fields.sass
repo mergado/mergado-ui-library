@@ -1,0 +1,20 @@
+label.suggestion-hint:after
+	content: ' %'
+
+.suggestion-hint:not(label),
+label.suggestion-hint:after,
+	color: $primaryColorDark
+	font-weight: $boldFontWeight
+
+
+.textoverlay-wrapper
+	line-height: $elementLineHeight
+
+	.variable-match
+		border-radius: 4px
+
+		&.good
+			background: #fbeea5
+
+		&.bad
+			background: #ff9e6c

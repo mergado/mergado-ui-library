@@ -1,0 +1,155 @@
+@for $i from 1 through 100
+	.w#{$i}p
+		width: $i * 1%
+
+@for $i from 1 through 100
+	.w#{$i}0x
+		width: $i * 10px
+		min-width: $i * 10px
+
+@for $i from 1 through 20
+	.max-w#{$i}00x
+		max-width: $i * 100px
+
+.capitalize
+	text-transform: capitalize
+
+.uppercase
+	text-transform: uppercase
+
+.lowercase
+	text-transform: lowercase
+
+.break-long-words
+	word-wrap: break-word
+	white-space: normal !important
+
+.nowrap
+	white-space: nowrap
+
+.monospace
+	font-family: $monospaceFontFamily
+
+.flex-sb
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.root-only
+	position: relative
+	box-shadow: 0 0 3px 2px $rootColor
+
+	&.offset-outline
+		box-shadow: 0 0 0 10px $pageBackgroundColor, 0 0 3px 12px $rootColor
+
+		.white-block &
+			box-shadow: 0 0 0 10px $white, 0 0 5px 13px $rootColor
+
+
+	&:hover:after
+		position: absolute
+		font-weight: $boldFontWeight
+		bottom: 3px
+		right: 5px
+		content: 'root'
+		line-height: 20px
+		text-align: center
+		color: rgba($rootColor, 0.75)
+
+	.root-only:after
+		content: none
+
+.root-only-color
+	color: $rootColor
+
+	.icon
+		fill: $rootColor
+
+.left
+	text-align: left
+
+.center
+	text-align: center
+
+.right
+	text-align: right
+
+.center-xy
+	height: 100%
+	@include flexCenter()
+
+.negative
+	color: $negativeColor
+
+.positive
+	color: $positiveColor
+
+.danger
+	color: $dangerColor
+
+.warning
+	color: $warningColor
+
+.caution
+	color: $primaryColorDark
+
+.drab,
+.light,
+	color: $drabColor
+
+	.icon
+		fill: $drabColor
+
+.big-line-breaks br
+	content: "A" !important
+	display: block !important
+	margin-bottom: 0.5em !important
+
+.cron-syntax
+	display: inline-block
+	margin: 0px 5px
+	padding: 4px 6px
+	border: $standardBorder
+	border-radius: 4px
+	background: $backgroundColor
+	color: $textColor
+
+.tooltip
+	cursor: help
+	border-bottom: 1px dotted $lineColor
+
+a[target='_blank']:not(.icon):not(.no-icon)
+	&:after
+		vertical-align: text-bottom
+		content: ''
+		display: inline-block
+		width: 16px
+		height: 16px
+		opacity: .5
+		transition: opacity $fastTransition
+		background: url('../img/icons/target-blank.svg') 50% 50% no-repeat
+		background-size: 10px 10px
+
+	&:hover:after
+		opacity: 1
+
+.invisible
+	display: block
+	height: 0
+	overflow: hidden
+	margin: 0
+	padding: 0
+	border-width: 0
+
+.hidden
+	display: none
+
+.eshop-avatar
+	// Exact dimensions of this wrapper are to be specified in other
+	// .eshop-avatar class definitions elsewhere.
+	// This is only to define a common "e-shop avatar" img tag style.
+	img
+		object-fit: cover
+		height: 100%
+		width: 100%
+		border-radius: 4px
