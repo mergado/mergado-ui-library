@@ -1,0 +1,36 @@
+@for $i from 0 through 100
+	.circle-chart-#{$i}
+		background: conic-gradient($cyan $i * 1%, $graphBackground $i * 1%)
+
+.circle-chart
+	position: relative
+	margin: -5px 0 // it won't make row bigger than normal 44px + 1px border
+	border-radius: 50%
+	width: 30px
+	height: 30px
+
+	.circle-chart-center
+		position: absolute
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 22px
+		height: 22px
+		margin: 4px 0 0 4px
+		border-radius: 50%
+		background: $white
+		color: $mediumGrey
+		z-index: 100
+		font-size: 0.9rem
+
+		.center
+			cursor: default
+
+
+	&:hover
+		.circle-chart-center
+			background: $hoverBackground
+
+	&.checked
+		.circle-chart-center
+			background: $highlightColor
