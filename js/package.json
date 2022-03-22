@@ -12,13 +12,9 @@
     "build:dev": "webpack"
   },
   "babel": {
-    "plugins": [
-      "transform-object-rest-spread",
-      "transform-class-properties"
-    ],
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": {
             "browsers": [
@@ -30,15 +26,19 @@
     ]
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "whatwg-fetch": "^2.0.3"
+    "@babel/core": "^7.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "webpack": "^3.0.0"
+    "@babel/core": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^5.1.3",
+    "mini-css-extract-plugin": "^1.3.8",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0"
   }
 }

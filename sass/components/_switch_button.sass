@@ -1,0 +1,91 @@
+.switch-button
+	position: relative
+	display: inline-block
+	width: 48px
+	height: 24px
+
+	&.small
+		width: 34px
+		height: 18px
+
+	// Track
+	.switch
+		position: absolute
+		cursor: pointer
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		transition: .4s
+		border-radius: 34px
+
+		&.grey
+			background-color: $mediumGrey
+
+			&:hover
+				background-color: $grey
+
+		&.cyan
+			background-color: $primaryColor
+
+			&:hover
+				background-color: $darkCyan
+
+		&.danger
+			background-color: $dangerColor
+
+			&:hover
+				background-color: $darkRed
+
+		&.success
+			background-color: $mergadoGreen
+
+			&:hover
+				background-color: $mergadoGreenDark
+
+	// Button
+	.switch:before
+		position: absolute
+		content: ""
+		height: 20px
+		width: 20px
+		left: 2px
+		bottom: 2px
+		background-color: $dirtyWhite
+		transition: .4s
+		border: $standardBorder
+		border-radius: 50%
+
+	.small.switch:before
+		width: 16px
+		height: 16px
+		left: 1px
+		bottom: 1px
+
+	.on.switch:before
+		transform: translateX(24px)
+
+	.on.small.switch:before
+		transform: translateX(16px)
+
+	.switch-icon-wrapper
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 100%
+		width: 100%
+
+		.icon
+			fill: $white
+
+			&:first-child
+				margin-left: 6px
+
+			&:last-child
+				margin-right: 6px
+
+.switch-button.disabled
+	pointer-events: none
+
+	.switch
+		background-color: $lineColor
